@@ -100,7 +100,7 @@ function hugHelpMessage(channel){
 function hateHelpMessage(channel){
   const embed = new Discord.MessageEmbed()
   .setTitle("Aide :")
-  .setDescription("Syntaxe : +hate **@LaPersonne** qui mérite de prendre tarif")
+  .setDescription("Syntaxe : +hate **@LaPersonne** qui mérite de prendre tarif 👊")
   .setColor(0x00AE86)
   .setTimestamp()
   channel.send({embed})
