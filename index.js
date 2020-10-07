@@ -36,6 +36,7 @@ client.on('message', message => {
 });
 
 //R34
+ /*
 client.on('message', message => {
   var content = message.content;
   var split = content.split(" ");
@@ -49,7 +50,7 @@ client.on('message', message => {
   getR34(message.channel,split[1])
 
 
-});
+});*/
 
 //SLAP
 client.on('message', message => {
