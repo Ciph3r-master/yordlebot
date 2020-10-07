@@ -16,7 +16,7 @@ const Tenor = require("tenorjs").client({
 
 client.on('ready', () => {
   console.log('I am ready!');
-  client.user.setPresence({ activity: {name: 'Bot instable, ne pas approcher sous peine de mort'}, status: 'online' })
+  client.user.setPresence({ activity: {name: 'Bot fait avec ❤️ par Bill Cipher.#2423'}, status: 'online' })
   .then(console.log)
   .catch(console.error);
 
@@ -36,7 +36,6 @@ client.on('message', message => {
 });
 
 //R34
- /*
 client.on('message', message => {
   var content = message.content;
   var split = content.split(" ");
@@ -50,7 +49,7 @@ client.on('message', message => {
   getR34(message.channel,split[1])
 
 
-});*/
+});
 
 //SLAP
 client.on('message', message => {
@@ -73,7 +72,7 @@ client.on('message', message => {
   if (split.length !== 2 && split[0] == "+hate","la personne que tu veux gronder") {
     helpMessage("+hate",message.channel)
   } else if(message.mentions.members.first() !== 'undefined') {
-    gifMessage("anime mad","anime stupid","se fait engueuler par","veut s'engueuler, il demande de l'aide",message.channel,message.mentions.members.first(), message.author.id,false)
+    gifMessage("anime mad","anime stupid","se fait engueuler par","veut s'insulter AIDEZ LE",message.channel,message.mentions.members.first(), message.author.id,false)
   }
 
 });
@@ -86,7 +85,7 @@ client.on('message', message => {
   if (split.length !== 2 && split[0] == "+kiss") {
     helpMessage("+kiss",message.channel,"la personne que tu aimes")
   } else if(message.mentions.members.first() !== 'undefined') {
-    gifMessage("anime kiss","anime alone","reçoit un bisou de","veut un bisou, il est seul",message.channel,message.mentions.members.first(), message.author.id,false)
+    gifMessage("anime kiss","anime alone","reçoit un bisou de","veut un bisou",message.channel,message.mentions.members.first(), message.author.id,false)
   }
 
 });
