@@ -69,8 +69,8 @@ client.on('message', message => {
   var content = message.content;
   var split = content.split(" ");
   if(split[0] !== "+hate") return;
-  if (split.length !== 2 && split[0] == "+hate","la personne que tu veux gronder") {
-    helpMessage("+hate",message.channel)
+  if (split.length !== 2 && split[0] == "+hate") {
+    helpMessage("+hate",message.channel,"la personne que tu veux gronder")
   } else if(message.mentions.members.first() !== 'undefined') {
     gifMessage("anime mad","anime stupid","se fait engueuler par","veut s'insulter AIDEZ LE",message.channel,message.mentions.members.first(), message.author.id,false)
   }
