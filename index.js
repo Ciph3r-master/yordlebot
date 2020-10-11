@@ -22,19 +22,6 @@ client.on('ready', () => {
 
 });
 
-// LOVE
-client.on('message', message => {
-  var content = message.content;
-  var split = content.split(" ");
-  if(split[0] !== "+love") return;
-  if (split.length !== 2 && split[0] == "+love") {
-    helpMessage("+love",message.channel,"la personne que tu aimes")
-  } else if(message.mentions.members.first() !== 'undefined') {
-    gifMessage("anime love","anime flex","est aimé par","s'aime",message.channel,message.mentions.members.first(), message.author.id,false)
-  }
-
-});
-
 // HUG
 client.on('message', message => {
   var content = message.content;
@@ -43,12 +30,27 @@ client.on('message', message => {
   if (split.length !== 2 && split[0] == "+hug") {
     helpMessage("+hug",message.channel,"qui mérite d'être caliné :heart:")
   } else if(message.mentions.members.first() !== 'undefined') {
+    message.delete()
     gifMessage("anime hug","anime alone","reçoit un calin de","essaye de se faire un calin",message.channel,message.mentions.members.first(), message.author.id,false)
   }
 
 });
 
-//R34
+// LOVE
+client.on('message', message => {
+  var content = message.content;
+  var split = content.split(" ");
+  if(split[0] !== "+love") return;
+  if (split.length !== 2 && split[0] == "+love") {
+    helpMessage("+love",message.channel,"la personne que tu aimes")
+  } else if(message.mentions.members.first() !== 'undefined') {
+    message.delete()
+    gifMessage("anime love","anime flex","est aimé par","s'aime",message.channel,message.mentions.members.first(), message.author.id,false)
+  }
+
+});
+
+/*//R34
 client.on('message', message => {
   var content = message.content;
   var split = content.split(" ");
@@ -62,7 +64,7 @@ client.on('message', message => {
   getR34(message.channel,split[1])
 
 
-});
+});*/
 
 //SLAP
 client.on('message', message => {
@@ -72,6 +74,7 @@ client.on('message', message => {
   if (split.length !== 2 && split[0] == "+slap") {
     helpMessage("+slap",message.channel,"la personne que tu veux gifler")
   } else if(message.mentions.members.first() !== 'undefined') {
+    message.delete()
     gifMessage("anime slap","anime sad","se prend une mandale de","essaye de se cogner",message.channel,message.mentions.members.first(), message.author.id,false)
   }
 
@@ -85,6 +88,7 @@ client.on('message', message => {
   if (split.length !== 2 && split[0] == "+hate") {
     helpMessage("+hate",message.channel,"la personne que tu veux gronder")
   } else if(message.mentions.members.first() !== 'undefined') {
+    message.delete()
     gifMessage("anime mad","anime stupid","se fait engueuler par","veut s'insulter AIDEZ LE",message.channel,message.mentions.members.first(), message.author.id,false)
   }
 
@@ -98,6 +102,7 @@ client.on('message', message => {
   if (split.length !== 2 && split[0] == "+kiss") {
     helpMessage("+kiss",message.channel,"la personne que tu aimes")
   } else if(message.mentions.members.first() !== 'undefined') {
+    message.delete()
     gifMessage("anime kiss","anime alone","reçoit un bisou de","veut un bisou",message.channel,message.mentions.members.first(), message.author.id,false)
   }
 
@@ -111,6 +116,7 @@ client.on('message', message => {
   if (split.length !== 2 && split[0] == "+pat") {
     helpMessage("+pat",message.channel,"la personne que tu veux caliner")
   } else if(message.mentions.members.first() !== 'undefined') {
+    message.delete()
     gifMessage("anime pat","anime shocked","reçoit des papouilles de","se caresse ( ͡ಠ ʖ̯ ͡ಠ)",message.channel,message.mentions.members.first(), message.author.id,false)
   }
 
@@ -124,6 +130,7 @@ client.on('message', message => {
   if (split.length !== 2 && split[0] == "+fight") {
     helpMessage("+fight",message.channel,"la personne que tu veux fracasser")
   } else if(message.mentions.members.first() !== 'undefined') {
+    message.delete()
     gifMessage("anime fight","anime crazy","se combat contre","se frappe tout seul AIDEZ LE",message.channel,message.mentions.members.first(), message.author.id,false)
   }
 
@@ -134,7 +141,7 @@ client.on('message', message => {
   var content = message.content;
   var split = content.split(" ");
   if(split[0] !== "+dance") return;
-
+  message.delete()
   gifMessage("anime dance","anime dance","danse, FAITES DU BRUIT !","",message.channel,message.mentions.members.first(), message.author.id,true)
   
 
@@ -145,7 +152,7 @@ client.on('message', message => {
   var content = message.content;
   var split = content.split(" ");
   if(split[0] !== "+sleep") return;
-
+  message.delete()
   gifMessage("anime sleep","anime sleep","par dormir, bonne nuit petit ange 🌙","",message.channel,message.mentions.members.first(), message.author.id,true)
   
 
@@ -156,7 +163,7 @@ client.on('message', message => {
   var content = message.content;
   var split = content.split(" ");
   if(split[0] !== "+banana") return;
-
+  message.delete()
   gifMessage("banana","banana","veut une banane 🍌","",message.channel,message.mentions.members.first(), message.author.id,true)
   
 
