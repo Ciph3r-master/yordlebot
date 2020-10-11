@@ -22,6 +22,14 @@ client.on('ready', () => {
 
 });
 
+//HELP
+client.on('message', message => {
+  var content = message.content;
+  var split = content.split(" ");
+  if(split[0] !== "+help") return;
+  helpAllCommands(message.channel)
+});
+
 // HUG
 client.on('message', message => {
   var content = message.content;
@@ -334,6 +342,25 @@ function getRandomInt(min, max) {
   max = Math.floor(max);
   console.log(Math.floor(Math.random() * (max - min + 1)) + min)
   return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function helpAllCommands(channel){
+  const embed = new Discord.MessageEmbed()
+  .setTitle("Aide :")
+  .setColor(0x00AE86)
+  .setAuthor('Nyan Nyan Bot', 'https://cdn.discordapp.com/avatars/762285487460319261/5e9d756f17f27d9da2ca50aec2c793b3.webp?size=128')
+  .addField("+hug @Destinataire","Pour faire des calîns ❤️")
+  .addField("+slap @Destinataire","Pour mettre une mandale 🤛")
+  .addField("+hate @Destinataire","Pour engueuler la personne qui t'énerve 🤬")
+  .addField("+pat @Destinataire","Pour caresser les cheveux de tes amis 😊")
+  .addField("+fight @Destinataire","Pour te battre contre ton pire ennemi ou ton meilleur ami 😤")
+  .addField("+kiss @Destinataire","Pour faire des bisous 😘")
+  .addField("+love @Destinataire","Pour montrer à une personne que vous l'aimez 🥰")
+  .addField("+dance","Pour faire la fête 🥳",true)
+  .addField("+sleep","Pour faire de beaux rêves 🛌",true)
+  .addField("+banana","UNE BANANE 🍌",true)
+  .setTimestamp()
+  channel.send({embed})
 }
 
 // Log our bot in using the token from https://discord.com/developers/applications
