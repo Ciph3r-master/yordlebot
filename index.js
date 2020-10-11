@@ -22,6 +22,19 @@ client.on('ready', () => {
 
 });
 
+// LOVE
+client.on('message', message => {
+  var content = message.content;
+  var split = content.split(" ");
+  if(split[0] !== "+love") return;
+  if (split.length !== 2 && split[0] == "+love") {
+    helpMessage("+love",message.channel,"la personne que tu aimes")
+  } else if(message.mentions.members.first() !== 'undefined') {
+    gifMessage("anime love","anime flex","est aimé par","s'aime",message.channel,message.mentions.members.first(), message.author.id,false)
+  }
+
+});
+
 // HUG
 client.on('message', message => {
   var content = message.content;
